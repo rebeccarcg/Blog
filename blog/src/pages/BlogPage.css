@@ -1,0 +1,21 @@
+.blog-post {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.blog-post h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.blog-post p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.blog-post strong {
+  font-weight: bold;
+}
