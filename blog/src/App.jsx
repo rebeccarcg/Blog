@@ -6,14 +6,14 @@ import { UserProvider } from "./context/UserContext";
 import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
 import PageLayout from "./components/PageLayout";
-import ProductPage from "./pages/ProductPage";
-import { ProductProvider } from "./context/ProductContext";
+import BlogPage from "./pages/BlogPage";
+import { BlogProvider } from "./context/BlogContext";
 
 const App = () => {
   const { isLoggedIn } = useContext(UserContext);
 
   return (
-    <ProductProvider>
+    <BlogProvider>
       <BrowserRouter>
         <Header />
         {isLoggedIn ? (
@@ -21,14 +21,14 @@ const App = () => {
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/products" element={<ProductPage />} />
+              <Route path="/blog" element={<BlogPage />} />
             </Routes>
           </>
         ) : (
           <PageLayout>Please log in</PageLayout>
         )}
       </BrowserRouter>
-    </ProductProvider>
+    </BlogProvider>
   );
 };
 
