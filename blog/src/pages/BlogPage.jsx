@@ -3,26 +3,17 @@ import PageLayout from "../components/PageLayout";
 import { BlogContext } from "../context/BlogContext";
 import AddBlogPostForm from "../components/AddBlogPostForm";
 import "./BlogPage.css";
-
-
+import BlogPost from "../components/BlogPost";
 
 const BlogPage = () => {
   const { blog } = useContext(BlogContext);
 
   return (
     <PageLayout title="Blog" headline="Blog Page">
-
       <AddBlogPostForm />
-      
-     
+
       {blog.map((item) => {
-        return (
-          <div id={item.id} className="blog-post">
-            <h2>{item.name}</h2>
-            <strong>{item.author}</strong>
-            <p>{item.content}</p>
-          </div>
-        );
+        return <BlogPost blogPost={item} />;
       })}
     </PageLayout>
   );
