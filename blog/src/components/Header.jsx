@@ -11,12 +11,11 @@ const Header = () => {
 
       <nav className="flex justify-end">
         <Link to="/" className="mr-4">
-          Home
+          Blog
         </Link>
         <Link className="mr-4" to="/about">
           About
         </Link>
-        <Link to="/blog">Blog</Link>
         <p className="ml-5">{userName}</p>
       </nav>
     </div>

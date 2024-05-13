@@ -19,9 +19,8 @@ const App = () => {
         {isLoggedIn ? (
           <>
             <Routes>
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/" element={<BlogPage />} />
               <Route path="/about" element={<AboutPage />} />
-              <Route path="/blog" element={<BlogPage />} />
             </Routes>
           </>
         ) : (
