@@ -9,8 +9,12 @@ export const BlogProvider = (props) => {
     { id: 3, name: "Blog 3", author: "Jean Doe", content: "Lorem Ipsum" },
   ]);
 
+  const addBlogPost = (newPost) => {
+    setBlog([...blog, newPost]); // Assuming newPost is an object with title, content, and author properties
+  };
+
   return (
-    <BlogContext.Provider value={{ blog }}>
+    <BlogContext.Provider value={{ blog, addBlogPost }}>
       {props.children}
     </BlogContext.Provider>
   );

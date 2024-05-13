@@ -1,13 +1,20 @@
 import { useContext } from "react";
 import PageLayout from "../components/PageLayout";
 import { BlogContext } from "../context/BlogContext";
+import AddBlogPostForm from "../components/AddBlogPostForm";
 import "./BlogPage.css";
+
+
 
 const BlogPage = () => {
   const { blog } = useContext(BlogContext);
 
   return (
     <PageLayout title="Blog" headline="Blog Page">
+
+      <AddBlogPostForm />
+      
+     
       {blog.map((item) => {
         return (
           <div id={item.id} className="blog-post">
