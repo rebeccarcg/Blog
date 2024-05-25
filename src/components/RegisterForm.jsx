@@ -15,7 +15,10 @@ const RegisterForm = () => {
     e.preventDefault();
     if (!isRegistering) {
       setIsRegistering(true);
-      await createUser(email, password);
+      await createUser(email, password).catch(err => {
+        setErrorMessage(err.message)
+        setIsRegistering(false)
+    })
     }
   };
 

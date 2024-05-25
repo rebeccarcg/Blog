@@ -14,7 +14,10 @@ const LoginForm = () => {
     e.preventDefault();
     if (!isSigningIn) {
       setIsSigningIn(true);
-      await signInUser(email, password);
+      await signInUser(email, password).catch(err => {
+        setErrorMessage(err.message)
+        setIsSigningIn(false)
+    })
     }
   };
 
