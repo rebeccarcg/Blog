@@ -1,17 +1,17 @@
 import React, { useState, useContext } from "react";
 import { BlogContext } from "../context/BlogContext";
-import { UserContext } from "../context/UserContext";
+import { AuthContext } from "../context/AuthContext";
 
 const AddBlogPostForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { addBlogPost } = useContext(BlogContext);
-  const { userName } = useContext(UserContext);
+  const { currentUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Lägg till nytt inlägg med titel och innehåll
-    addBlogPost({ title, content, author: userName });
+    addBlogPost({ title, content, author: currentUser.email });
     // Återställ formuläret
     setTitle("");
     setContent("");

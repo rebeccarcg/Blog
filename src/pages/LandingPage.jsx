@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import React from "react";
 import PageLayout from "../components/PageLayout";
 
 const LandingPage = () => {
-  const { userName, setUserName } = useContext(UserContext);
-
   return (
-    <PageLayout title="Home" headline={`Attention pretended ${userName}!`}>
+    <PageLayout title="Home" headline={`Attention pretended!`}>
       <p>
         Performed suspicion in certainty so frankness by attention pretended.
         Newspaper or in tolerably education enjoyment. Extremity excellent
@@ -14,9 +11,6 @@ const LandingPage = () => {
         total boy but. Elderly up chicken do at feeling is. Like seen drew no
         make fond at on rent.
       </p>
-      <button className="mt-5" onClick={() => setUserName("Jane Doe")}>
-        Change name
-      </button>
 
       
     </PageLayout>

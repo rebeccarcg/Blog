@@ -7,22 +7,19 @@ export const BlogProvider = (props) => {
     {
       id: 1,
       title: "Blog 1",
-      author: "Jane Doe",
-      authorId: 1,
+      author: "Jane.Doe@example.com",
       content: "Lorem Ipsum",
     },
     {
       id: 2,
       title: "Blog 2",
-      author: "James Doe",
-      authorId: 2,
+      author: "James.Doe@example.com",
       content: "Lorem Ipsum",
     },
     {
       id: 3,
       title: "Blog 3",
-      author: "Jean Doe",
-      authorId: 1,
+      author: "Jean.Doe@example.com",
       content: "Lorem Ipsum",
     },
   ]);
@@ -34,21 +31,21 @@ export const BlogProvider = (props) => {
   const editBlogPost = (postId, newData) => {
     setBlog((prevBlog) =>
       prevBlog.map((post) =>
-        post.id === postId && post.authorId === newData.authorId
+        post.id === postId && post.author === newData.author
           ? { ...post, ...newData }
           : post
       )
     );
   };
 
-  const deleteBlogPost = (postId, userId) => {
+  const deleteBlogPost = (postId, author) => {
     setBlog((prevBlog) =>
-      prevBlog.filter((post) => post.id !== postId || post.authorId !== userId)
+      prevBlog.filter((post) => post.id !== postId || post.author !== author)
     );
   };
 
-  const userBlogs = (userId) => {
-    return blog.filter((post) => post.authorId === userId);
+  const userBlogs = (author) => {
+    return blog.filter((post) => post.author === author);
   };
 
   return (
