@@ -1,22 +1,32 @@
+import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { AuthContext } from "../context/AuthContext";
+import { signOutUser } from "../firebase/client";
 
 const Header = () => {
-  const { userName } = useContext(UserContext);
+  const { currentUser, userLoggedIn } = useContext(AuthContext);
 
   return (
     <div className="grid grid-cols-2 mt-6 mx-10 items-center">
-      <h1 className="font-bold">Global state</h1>
+      <h1 className="font-bold">Blog</h1>
 
       <nav className="flex justify-end">
-        <Link to="/" className="mr-4">
-          Blog
-        </Link>
-        <Link className="mr-4" to="/about">
-          About
-        </Link>
-        <p className="ml-5">{userName}</p>
+        {userLoggedIn ? (
+          <Fragment>
+            <Link to="/blog" className="mr-4">
+              Blog
+            </Link>
+            <Link className="mr-4" to="/about">
+              About
+            </Link>
+            <p className="mx-5 font-bold">{currentUser.email}</p>
+            <button onClick={signOutUser}>Log out</button>
+          </Fragment>
+        ) : (
+          <Link to="/login" className="ml-5">
+            Log in
+          </Link>
+        )}
       </nav>
     </div>
   );
