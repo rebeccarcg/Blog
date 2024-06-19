@@ -1,0 +1,38 @@
+.edit-form {
+    margin-bottom: 20px; /* Same margin as .blog-post for consistency */
+    padding: 20px; /* Same padding as .blog-post */
+    border: 1px solid #ccc; /* Same border as .blog-post */
+    border-radius: 5px; /* Same border radius as .blog-post */
+    background-color: #f9f9f9; /* Same background color as .blog-post */
+  }
+  
+  .edit-form input,
+  .edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Adjust margin to match existing styles */
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  .edit-form input:focus,
+  .edit-form textarea:focus {
+    border-color: #007bff; /* Change border color on focus */
+  }
+  
+  .edit-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px; /* Adjust margin to match existing button styles */
+  }
+  
+  .edit-form button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+  }

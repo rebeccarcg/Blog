@@ -6,15 +6,17 @@ import "./BlogPage.css";
 import BlogPost from "../components/BlogPost";
 
 const BlogPage = () => {
-  const { blog } = useContext(BlogContext);
+  const { blog, editBlogPost } = useContext(BlogContext);
 
   return (
     <PageLayout title="Blog" headline="Blog Page">
       <AddBlogPostForm />
 
-      {blog.map((item) => {
-        return <BlogPost blogPost={item} />;
-      })}
+      {blog.map((item) => (
+        <BlogPost key={item.id} blogPost={item} onEdit={editBlogPost} />
+      ))}
+
+      
     </PageLayout>
   );
 };
